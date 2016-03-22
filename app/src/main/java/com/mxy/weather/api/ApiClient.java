@@ -39,7 +39,7 @@ public class ApiClient {
         return BASE_URL + url;
     }
 
-    public void destory() {
+    public void destroy() {
         this.cancelAllRequest();
     }
 

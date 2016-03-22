@@ -1,14 +1,11 @@
 package com.mxy.weather.ui;
 
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -19,7 +16,6 @@ import com.loopj.android.http.TextHttpResponseHandler;
 import com.mxy.weather.R;
 import com.mxy.weather.base.BaseAppCompatActivity;
 import com.mxy.weather.model.WeatherData;
-import com.mxy.weather.model.WeatherResponse;
 import cz.msebera.android.httpclient.Header;
 
 import java.util.List;
@@ -43,12 +39,7 @@ public class WeatherActivity extends BaseAppCompatActivity {
         ButterKnife.inject(this);
         setSupportActionBar(mToolBar);
 
-        mFloatingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-        });
+        mFloatingButton.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show());
         initData();
     }
 

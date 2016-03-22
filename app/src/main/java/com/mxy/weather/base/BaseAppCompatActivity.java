@@ -35,7 +35,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (this.mClient != null) {
-            this.mClient.destory();
+            this.mClient.destroy();
         }
     }
 }
