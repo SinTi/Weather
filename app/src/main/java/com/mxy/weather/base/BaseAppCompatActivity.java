@@ -1,8 +1,10 @@
 package com.mxy.weather.base;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.Toast;
+import com.mxy.weather.R;
 import com.mxy.weather.api.ApiClient;
 
 /**
@@ -29,6 +31,14 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         }
 
         Toast.makeText(this, tips, Toast.LENGTH_SHORT).show();
+    }
+
+    public static void zoomInActivity(Activity activity) {
+        activity.overridePendingTransition(R.anim.zoom_in, 0);
+    }
+
+    public static void zoomOutActivity(Activity activity) {
+        activity.overridePendingTransition(0, R.anim.zoom_out);
     }
 
     @Override

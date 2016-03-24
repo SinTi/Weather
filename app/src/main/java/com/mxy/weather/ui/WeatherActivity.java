@@ -7,8 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.RequestParams;
@@ -25,21 +25,22 @@ public class WeatherActivity extends BaseAppCompatActivity {
 
     public static final String CITY_ID_BEIJING = "CN101010100";
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     Toolbar mToolBar;
-    @InjectView(R.id.text)
+    @Bind(R.id.text)
     TextView textView;
-    @InjectView(R.id.fab)
+    @Bind(R.id.fab)
     FloatingActionButton mFloatingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         setSupportActionBar(mToolBar);
 
-        mFloatingButton.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show());
+        mFloatingButton.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
+                .setAction("Action", null).show());
         initData();
     }
 
